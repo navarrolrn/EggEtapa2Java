@@ -45,8 +45,7 @@ public class Enc2_Ejercicios {
     }
     public static void ejercicio1() {
         Scanner leer = new Scanner(System.in);
-        int numA;
-        int numB;
+        int numA, numB;
         
         System.out.println("Ingrese un numero entero:");
         numA = leer.nextInt();
