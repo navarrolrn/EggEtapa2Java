@@ -17,20 +17,27 @@ public class EjercXtra06 {
         // Declaración e inicialización de la sopaDletras
         Scanner leer = new Scanner(System.in);
         String palabra;
-        int fila,caracter;
+        int fila,numAleatorio;
         int ctdad=1;
         int xFil=20;
         int xCol=20;
         String [][] sopaDletras = new String[xFil][xCol];
         
-
         do{
             System.out.print(ctdad+"/5 Ingrese una palabra de 3 a 5 letras :");
             palabra=leer.next();
-            if(palabra.length()>3&&palabra.length()<6){
-                fila=(int) (Math.random() * 2);
-                for(int x=1;x<palabra.length();x++){
-                    sopaDletras[fila][0] = palabra.substring(x, 0);
+            if(palabra.length()>=3&&palabra.length()<=5){
+                
+                do{
+                    fila=(int) (Math.random()*10)+1;
+                    System.out.println(fila);
+                    if(sopaDletras[fila][0].isEmpty()){
+                        break;
+                    }
+                }while(true);
+                
+                for(int x=0;x<palabra.length();x++){
+                    sopaDletras[fila][x] = palabra.substring(x,x+1);
                 }
                 ctdad++;
             }else{
@@ -43,16 +50,16 @@ public class EjercXtra06 {
         for(int i=0; i<xFil; i++) {
             for(int j=0; j<xCol; j++) {
                 if(sopaDletras[i][j]==""){
-                    caracter=(int)(Math.random()*10);
-                    sopaDletras[i][j]=(char) (caracter);
+                    numAleatorio=(int)(Math.random()*10);
+                    sopaDletras[i][j]=String.valueOf(numAleatorio);
                 }
             }
         }
         
         // mostrar la matriz A e ir sumandos sus elementos
-        System.out.println("Matriz original:");
-        for(int i=0; i<sopaDletras.length; i++) {
-            for(int j=0; j<sopaDletras[0].length; j++) {
+        System.out.println("Sopa de Letras");
+        for(int i=0; i<xFil; i++) {
+            for(int j=0; j<xCol; j++) {
                 System.out.print(sopaDletras[i][j] + " ");
             }
             System.out.println();
