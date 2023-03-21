@@ -30,8 +30,7 @@ public class EjercXtra06 {
                 
                 do{
                     fila=(int) (Math.random()*10)+1;
-                    System.out.println(fila);
-                    if(sopaDletras[fila][0].isEmpty()){
+                    if(sopaDletras[fila][0]==null){
                         break;
                     }
                 }while(true);
@@ -49,7 +48,7 @@ public class EjercXtra06 {
         
         for(int i=0; i<xFil; i++) {
             for(int j=0; j<xCol; j++) {
-                if(sopaDletras[i][j]==""){
+                if(sopaDletras[i][j]==null){
                     numAleatorio=(int)(Math.random()*10);
                     sopaDletras[i][j]=String.valueOf(numAleatorio);
                 }

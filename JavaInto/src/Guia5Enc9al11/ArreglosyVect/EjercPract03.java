@@ -5,7 +5,7 @@ package Guia5Enc9al11.ArreglosyVect;
 
 public class EjercPract03 {
     public static void main(String[] args) {
-        int[] vector = {12, 34, 567, 89, 0, 1234, 56, 7890, 12345, 6789};
+        int[] vector = {12, 34, 567, 89, 1, 1234, 56, 7890, 12345, 6789};
         int[] contadores = new int[5];
 
         for (int i = 0; i < vector.length; i++) {
